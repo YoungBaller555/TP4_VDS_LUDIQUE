@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c4s1v77ngq0fc"]
+
+[ext_resource type="Texture2D" uid="uid://6f36t2ubosmo" path="res://assets/sprites/energy_cell.png" id="1_16byb"]
+[ext_resource type="Script" uid="uid://tkclh3kga2hb" path="res://assets/scripts/capsule.gd" id="1_jxumv"]
+[ext_resource type="AudioStream" uid="uid://dhwi5rfybngd0" path="res://assets/audio/capsulepickup.wav" id="3_dlj8a"]
+[ext_resource type="Script" uid="uid://3rkjx1cq8ltv" path="res://assets/scripts/capsulehitboxson.gd" id="3_mh7k2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v7ktk"]
+size = Vector2(10, 14)
+
+[node name="capsule" type="Area2D"]
+script = ExtResource("1_jxumv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_16byb")
+
+[node name="capsulehitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_v7ktk")
+script = ExtResource("3_mh7k2")
+
+[node name="sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_dlj8a")
+volume_db = 1.821
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

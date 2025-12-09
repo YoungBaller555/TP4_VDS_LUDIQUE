@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3 uid="uid://c27qyh0rvi5l0"]
+
+[ext_resource type="Texture2D" uid="uid://6f36t2ubosmo" path="res://assets/sprites/energy_cell.png" id="1_48imw"]
+[ext_resource type="Script" uid="uid://coegpsydri6mh" path="res://assets/scripts/hud.gd" id="1_fkaho"]
+[ext_resource type="LabelSettings" uid="uid://bvqjq4hkhb6w6" path="res://assets/UI settings/new_label_settings.tres" id="2_3h8us"]
+
+[node name="HUD" type="Control" node_paths=PackedStringArray("energy_cell_label", "portal_label") groups=["hud"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_fkaho")
+energy_cell_label = NodePath("EnergyCellTexture/EnergyCellLabel")
+portal_label = NodePath("PortalLabel")
+
+[node name="EnergyCellTexture" type="TextureRect" parent="."]
+layout_mode = 1
+offset_left = 16.0
+offset_top = 80.0
+offset_right = 120.0
+offset_bottom = 168.0
+texture = ExtResource("1_48imw")
+stretch_mode = 4
+
+[node name="EnergyCellLabel" type="Label" parent="EnergyCellTexture"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_top = -20.0
+offset_right = 136.0
+offset_bottom = 20.0
+grow_vertical = 2
+text = "x 00"
+label_settings = ExtResource("2_3h8us")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PortalLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 55.0
+text = "portal closed..."
+label_settings = ExtResource("2_3h8us")

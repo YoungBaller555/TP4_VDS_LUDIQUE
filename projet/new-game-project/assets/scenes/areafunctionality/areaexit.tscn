@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://7urmmdapu1pj"]
+
+[ext_resource type="Script" uid="uid://dnmlwmin5rq0n" path="res://assets/scripts/areaexit.gd" id="1_fdfmm"]
+[ext_resource type="Texture2D" uid="uid://caajdecxgshc0" path="res://assets/portal_new.png" id="2_fdfmm"]
+[ext_resource type="AudioStream" uid="uid://cv07lmcdqbt0h" path="res://assets/audio/portal_enter.wav" id="3_psr1o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fdfmm"]
+radius = 11.0
+
+[node name="areaexit" type="Area2D" node_paths=PackedStringArray("sprite") groups=["area_exit"]]
+collision_layer = 65537
+script = ExtResource("1_fdfmm")
+sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fdfmm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_fdfmm")
+
+[node name="audioportal" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_psr1o")
+playback_type = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
