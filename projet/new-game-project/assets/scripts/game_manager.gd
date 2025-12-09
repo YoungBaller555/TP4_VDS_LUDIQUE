@@ -15,6 +15,7 @@ func _ready():
 	area_container = get_tree().get_first_node_in_group("area_container")
 	player = get_tree().get_first_node_in_group("player")
 	load_area(starting_area)
+	
 
 
 func next_area():

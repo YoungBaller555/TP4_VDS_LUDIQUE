@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm3kx7q2h5tnr"]
+[gd_scene load_steps=3 format=3 uid="uid://bm3kx7q2h5tnr"]
 
 [ext_resource type="PackedScene" uid="uid://cn5exqofse4gx" path="res://assets/scenes/areafunctionality/area_template.tscn" id="1_blyc0"]
+[ext_resource type="Texture2D" uid="uid://ewq53bts18hx" path="res://assets/sprites/sky.jpg" id="2_hgs5c"]
 
 [node name="area2" instance=ExtResource("1_blyc0")]
 
@@ -21,3 +22,9 @@ position = Vector2(364, -273)
 
 [node name="areaexit" parent="." index="4"]
 position = Vector2(303, -277)
+
+[node name="background" type="Sprite2D" parent="." index="5"]
+z_index = -4000
+position = Vector2(257, -121)
+scale = Vector2(0.578125, 0.531511)
+texture = ExtResource("2_hgs5c")

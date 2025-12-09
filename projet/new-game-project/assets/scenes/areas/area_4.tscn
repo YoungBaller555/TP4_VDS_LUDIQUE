@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://5328o122coxw"]
+[gd_scene load_steps=9 format=3 uid="uid://5328o122coxw"]
 
 [ext_resource type="Script" uid="uid://by2vtn0n16ws3" path="res://assets/scripts/scriptpausing.gd" id="1_454rq"]
 [ext_resource type="Texture2D" uid="uid://blbtreiv1gx7v" path="res://assets/sprites/tiles_1.png" id="2_ab20m"]
 [ext_resource type="PackedScene" uid="uid://c4s1v77ngq0fc" path="res://assets/scenes/capsule.tscn" id="3_616dj"]
 [ext_resource type="AudioStream" uid="uid://dv66inu6p32k6" path="res://assets/audio/Ethereal_Ambient_Music_Copyright_Free.wav" id="4_hwu3k"]
 [ext_resource type="PackedScene" uid="uid://7urmmdapu1pj" path="res://assets/scenes/areafunctionality/areaexit.tscn" id="5_no1ba"]
+[ext_resource type="Texture2D" uid="uid://bk222rjbl8kwv" path="res://assets/sprites/SKYYYY3.png" id="6_pecms"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ifg76"]
 texture = ExtResource("2_ab20m")
@@ -124,3 +125,9 @@ autoplay = true
 
 [node name="areaexit" parent="." instance=ExtResource("5_no1ba")]
 position = Vector2(377, -83)
+
+[node name="background" type="Sprite2D" parent="."]
+z_index = -4000
+position = Vector2(94, -191)
+scale = Vector2(1.15479, 1.07143)
+texture = ExtResource("6_pecms")

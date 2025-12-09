@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://c0j48p7xvokeo"]
+[gd_scene load_steps=3 format=3 uid="uid://c0j48p7xvokeo"]
 
 [ext_resource type="PackedScene" uid="uid://cn5exqofse4gx" path="res://assets/scenes/areafunctionality/area_template.tscn" id="1_db1nh"]
+[ext_resource type="Texture2D" uid="uid://b135enuejmbq6" path="res://assets/sprites/nightsky.png" id="2_o23ij"]
 
 [node name="area1" instance=ExtResource("1_db1nh")]
 
@@ -21,3 +22,9 @@ position = Vector2(527, -171)
 
 [node name="areaexit" parent="." index="4"]
 position = Vector2(331, -28)
+
+[node name="background" type="Sprite2D" parent="." index="5"]
+z_index = -4000
+position = Vector2(407, -223)
+scale = Vector2(0.273684, 0.283945)
+texture = ExtResource("2_o23ij")
