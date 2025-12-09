@@ -19,6 +19,6 @@ func close():
 
 func _on_body_entered(body):
 	if is_open && body is Playercontroller:
-		audio1.play()
+		Audiocontroller.play_end_level()
 		GameManager.next_area()
 		

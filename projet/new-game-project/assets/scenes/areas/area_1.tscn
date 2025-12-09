@@ -20,6 +20,9 @@ position = Vector2(243, -283)
 [node name="capsule4" parent="capsules" index="3"]
 position = Vector2(527, -171)
 
+[node name="backgroundmusic" parent="." index="3"]
+volume_db = -80.0
+
 [node name="areaexit" parent="." index="4"]
 position = Vector2(331, -28)
 
