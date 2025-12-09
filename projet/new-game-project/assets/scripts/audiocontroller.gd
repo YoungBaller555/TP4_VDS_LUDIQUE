@@ -17,3 +17,6 @@ func play_end_level():
 
 func play_capsule():
 	$capsule.play()
+
+func play_scroll():
+	$scroll.play()

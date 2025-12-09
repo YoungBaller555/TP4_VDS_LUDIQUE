@@ -72,4 +72,3 @@ script = ExtResource("6_ka6na")
 [connection signal="child_entered_tree" from="." to="sign/CharacterBody2D/scrollwriting" method="_on_area_1_child_entered_tree"]
 [connection signal="body_entered" from="sign/CharacterBody2D" to="sign" method="_on_character_body_2d_body_entered"]
 [connection signal="body_entered" from="sign/CharacterBody2D" to="sign/CharacterBody2D/scrollwriting" method="_on_character_body_2d_body_entered"]
-[connection signal="body_exited" from="sign/CharacterBody2D" to="sign/CharacterBody2D/scrollwriting" method="_on_character_body_2d_body_exited"]

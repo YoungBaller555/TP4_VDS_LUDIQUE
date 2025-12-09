@@ -1,18 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://c0j48p7xvokeo"]
+[gd_scene load_steps=6 format=3 uid="uid://c0j48p7xvokeo"]
 
 [ext_resource type="PackedScene" uid="uid://cn5exqofse4gx" path="res://assets/scenes/areafunctionality/area_template.tscn" id="1_db1nh"]
 [ext_resource type="Texture2D" uid="uid://b135enuejmbq6" path="res://assets/sprites/nightsky.png" id="2_o23ij"]
 [ext_resource type="Script" uid="uid://k3u7wy4di45j" path="res://assets/scripts/sign.gd" id="3_ifg76"]
 [ext_resource type="Texture2D" uid="uid://buif6vf1l1jg1" path="res://assets/sprites/realscroll.png" id="3_sr7qv"]
-[ext_resource type="FontFile" uid="uid://bo71eqjcpeyp2" path="res://assets/Fonts/Kenney Mini.ttf" id="5_jjeiq"]
-[ext_resource type="Script" uid="uid://doshlwbkqt0ut" path="res://assets/scripts/scrollwriting.gd" id="6_ka6na"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ifg76"]
 size = Vector2(38, 24)
-
-[sub_resource type="LabelSettings" id="LabelSettings_ka6na"]
-font = ExtResource("5_jjeiq")
-font_size = 8
 
 [node name="area1" instance=ExtResource("1_db1nh")]
 
@@ -47,8 +41,6 @@ texture = ExtResource("2_o23ij")
 script = ExtResource("3_ifg76")
 
 [node name="signappearance" type="Sprite2D" parent="sign" index="0"]
-visibility_layer = 2
-z_index = -2
 position = Vector2(-65, -20)
 scale = Vector2(0.0197802, 0.0309091)
 texture = ExtResource("3_sr7qv")
@@ -59,17 +51,4 @@ texture = ExtResource("3_sr7qv")
 position = Vector2(-65, -19)
 shape = SubResource("RectangleShape2D_ifg76")
 
-[node name="scrollwriting" type="Label" parent="sign/CharacterBody2D" index="1"]
-offset_left = -123.0
-offset_top = -60.0
-offset_right = 104.0
-offset_bottom = -20.0
-text = "hey there! 
-Collecting all the coins unlocks the portal..."
-label_settings = SubResource("LabelSettings_ka6na")
-script = ExtResource("6_ka6na")
-
-[connection signal="child_entered_tree" from="." to="sign/CharacterBody2D/scrollwriting" method="_on_area_1_child_entered_tree"]
-[connection signal="body_entered" from="sign/CharacterBody2D" to="sign" method="_on_character_body_2d_body_entered"]
-[connection signal="body_entered" from="sign/CharacterBody2D" to="sign/CharacterBody2D/scrollwriting" method="_on_character_body_2d_body_entered"]
-[connection signal="body_exited" from="sign/CharacterBody2D" to="sign/CharacterBody2D/scrollwriting" method="_on_character_body_2d_body_exited"]
+[connection signal="body_shape_entered" from="sign/CharacterBody2D" to="sign" method="_on_character_body_2d_body_shape_entered"]

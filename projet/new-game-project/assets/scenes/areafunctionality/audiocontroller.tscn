@@ -1,17 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://cgf6g733m4xc8"]
+[gd_scene load_steps=7 format=3 uid="uid://cgf6g733m4xc8"]
 
 [ext_resource type="AudioStream" uid="uid://dv66inu6p32k6" path="res://assets/audio/Ethereal_Ambient_Music_Copyright_Free.wav" id="1_a0utw"]
 [ext_resource type="Script" uid="uid://cd58i1je7tmqd" path="res://assets/scripts/audiocontroller.gd" id="1_are5i"]
 [ext_resource type="AudioStream" uid="uid://bkoa4y3267n35" path="res://assets/audio/cartoon-jump-6462.mp3" id="2_mvias"]
 [ext_resource type="AudioStream" uid="uid://bdby4kuu7ul7d" path="res://assets/audio/portal_new.wav" id="3_are5i"]
 [ext_resource type="AudioStream" uid="uid://dhwi5rfybngd0" path="res://assets/audio/capsulepickup.wav" id="5_lynij"]
+[ext_resource type="AudioStream" uid="uid://yjhpr32r4okw" path="res://assets/audio/scrollsound.wav" id="6_kxcmx"]
 
 [node name="audiocontroller" type="Node2D"]
 script = ExtResource("1_are5i")
 
 [node name="music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_a0utw")
-volume_db = -19.676
+volume_db = -25.298
 
 [node name="jump" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_mvias")
@@ -24,3 +25,7 @@ stream = ExtResource("3_are5i")
 [node name="capsule" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_lynij")
 volume_db = -18.888
+
+[node name="scroll" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_kxcmx")
+volume_db = -13.936

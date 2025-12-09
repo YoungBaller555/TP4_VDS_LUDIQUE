@@ -3,5 +3,6 @@
 [ext_resource type="FontFile" uid="uid://bo71eqjcpeyp2" path="res://assets/Fonts/Kenney Mini.ttf" id="1_omlx5"]
 
 [resource]
+resource_local_to_scene = true
 font = ExtResource("1_omlx5")
 font_size = 32
