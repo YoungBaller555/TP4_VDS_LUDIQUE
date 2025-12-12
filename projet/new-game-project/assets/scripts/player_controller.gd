@@ -5,7 +5,7 @@ class_name Playercontroller
 @export var jump_power = 10.0
 
 var speed_multiplier = 30.0
-var jump_multiplier = -30.0
+var jump_multiplier = -35.0
 var direction = 0
 
 #const SPEED = 300.0

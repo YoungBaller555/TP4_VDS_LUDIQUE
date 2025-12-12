@@ -4,6 +4,7 @@ var pause_menu: Control = null
 var paused = false
 
 
+
 func _ready():
 	# Find the pause menu in the scene tree (it's under player in gameplay scene)
 	var player = get_tree().get_first_node_in_group("player")

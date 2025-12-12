@@ -17,6 +17,8 @@ func _ready():
 	load_area(starting_area)
 	
 
+func reload_area():
+	load_area(current_area)
 
 func next_area():
 	current_area += 1

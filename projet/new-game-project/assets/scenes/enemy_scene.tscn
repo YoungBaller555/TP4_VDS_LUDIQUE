@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://bgwsuowq2bx73"]
+
+[ext_resource type="Script" uid="uid://bx1i85tj2ag6q" path="res://assets/scripts/enemy.gd" id="1_m3wlo"]
+[ext_resource type="Texture2D" uid="uid://bt0t12usacdn7" path="res://assets/sprites/art_atlas.png" id="2_8eli0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d133c"]
+size = Vector2(19, 17)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg1fm"]
+size = Vector2(11, 13.5)
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_m3wlo")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -3)
+shape = SubResource("RectangleShape2D_d133c")
+
+[node name="enemysprite" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_8eli0")
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 16)
+
+[node name="leftray" type="RayCast2D" parent="."]
+position = Vector2(-7, 6)
+target_position = Vector2(0, 5)
+hit_from_inside = true
+
+[node name="rightray" type="RayCast2D" parent="."]
+position = Vector2(7, 6)
+target_position = Vector2(0, 5)
+hit_from_inside = true
+
+[node name="leftwallray" type="RayCast2D" parent="."]
+position = Vector2(-7, 2)
+target_position = Vector2(-2, 0)
+
+[node name="rightwallray" type="RayCast2D" parent="."]
+position = Vector2(7, 2)
+target_position = Vector2(2, 0)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+z_index = -1
+position = Vector2(0.5, 1.75)
+shape = SubResource("RectangleShape2D_tg1fm")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
