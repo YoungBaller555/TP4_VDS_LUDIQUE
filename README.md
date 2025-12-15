@@ -1,7 +1,7 @@
-# TP3_ludique_vds
-tp2 programation ludique, Vasile Dominique Sulici.
+# TP4_ludique_vds
+tp4 programation ludique, Vasile Dominique Sulici.
 
-## - Jeux platformer simple, avec systeme de clé et de progression.
+## - Jeux platformer simple, avec systeme de clé et de progression et ennemis.
 
 # - HOW TO PLAY
 
